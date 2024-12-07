@@ -5,10 +5,16 @@ import 'package:ngo_app/core/routes/app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        /// routes go here
+        /// routes for bottom navbar
+        AutoRoute(page: BottomNavbarWidget.page, initial: true, children: [
+          AutoRoute(page: HomeRoute.page),
+          AutoRoute(page: SearchRoute.page),
+          AutoRoute(page: NotificationRoute.page),
+          AutoRoute(page: ProfileRoute.page),
+        ]),
 
         /// routes for auth screens
-        AutoRoute(page: LoginRoute.page, initial: true),
+        AutoRoute(page: LoginRoute.page),
         AutoRoute(
           page: RegisterRouteWidget.page,
         ),
