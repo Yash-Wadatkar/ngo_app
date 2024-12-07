@@ -21,9 +21,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       /// custom appbar widget
       appBar: CustomAppBarWidget(
-        ontap: () {
-          context.maybePop();
-        },
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -79,7 +77,9 @@ class LoginScreen extends StatelessWidget {
               /// custom login button
               CustomButtonWidget(
                 buttonLabel: AppStrings.loginText,
-                ontap: () {},
+                ontap: () {
+                  context.pushRoute(ChatListingRoute());
+                },
               ),
 
               AppSizes.height6,

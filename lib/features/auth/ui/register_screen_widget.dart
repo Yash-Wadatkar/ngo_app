@@ -19,7 +19,7 @@ class RegisterScreenWidget extends StatelessWidget {
     return Scaffold(
       /// custom appbar widget
       appBar: CustomAppBarWidget(
-        ontap: () {
+        onTap: () {
           context.maybePop();
         },
       ),

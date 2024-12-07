@@ -22,3 +22,5 @@ dart run build_runner watch -->
 <!-- If you want the generator to run one time and exit, use
 
 dart run build_runner build -->
+
+dart run build_runner clean && dart pub run build_runner watch --delete-conflicting-outputs

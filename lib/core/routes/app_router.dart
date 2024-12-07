@@ -17,7 +17,7 @@ class AppRouter extends RootStackRouter {
         ),
 
         AutoRoute(page: CreateNewPasswordRoute.page),
-
-        AutoRoute(page: OtpVerificationRoute.page)
+        AutoRoute(page: OtpVerificationRoute.page),
+        AutoRoute(page: ChatListingRoute.page)
       ];
 }

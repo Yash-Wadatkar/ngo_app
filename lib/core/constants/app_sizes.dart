@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /* This class provides static references to commonly 
 used sizes such as sizes, heights, widths, and paddings, 
@@ -38,6 +38,7 @@ class AppSizes {
   static double hSize16 = 16.h;
   static double hSize18 = 18.h;
   static double hSize20 = 20.h;
+  static double hSize30 = 30.h;
   static double hSize40 = 40.h;
 
   /// Widths as percentages of screen width
@@ -51,6 +52,7 @@ class AppSizes {
   static double wSize16 = 16.w;
   static double wSize18 = 18.w;
   static double wSize20 = 20.w;
+  static double wSize30 = 30.w;
 
   /// Radius sizes
   static double radius2 = 2.sp;
@@ -74,6 +76,7 @@ class AppSizes {
   static SizedBox height10 = SizedBox(height: 10.h);
   static SizedBox height12 = SizedBox(height: 12.h);
   static SizedBox height14 = SizedBox(height: 14.h);
+  static SizedBox height15 = SizedBox(height: 15.h);
   static SizedBox height16 = SizedBox(height: 16.h);
   static SizedBox height20 = SizedBox(height: 20.h);
 
@@ -83,6 +86,8 @@ class AppSizes {
   static SizedBox width6 = SizedBox(width: 6.w);
   static SizedBox width8 = SizedBox(width: 8.w);
   static SizedBox width10 = SizedBox(width: 10.w);
+  static SizedBox width15 = SizedBox(width: 15.w);
+  static SizedBox width20 = SizedBox(width: 20.w);
 
   /// Padding Sizes
   static EdgeInsets padding2 = EdgeInsets.all(2.sp);

@@ -15,7 +15,7 @@ class OtpVerificationScreen extends StatelessWidget {
     return Scaffold(
       /// custom app bar widget
       appBar: CustomAppBarWidget(
-        ontap: () {
+        onTap: () {
           context.maybePop();
         },
       ),

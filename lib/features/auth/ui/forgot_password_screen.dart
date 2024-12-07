@@ -18,7 +18,7 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBarWidget(
-        ontap: () {
+        onTap: () {
           context.maybePop();
         },
       ),

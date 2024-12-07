@@ -15,7 +15,7 @@ class CreateNewPasswordScreen extends StatelessWidget {
     return Scaffold(
       /// custom app bar widget
       appBar: CustomAppBarWidget(
-        ontap: () {},
+        onTap: () {},
       ),
       body: Padding(
         padding: AppSizes.horizontalPadding6,

@@ -1,4 +1,7 @@
 class AppStrings {
+  static const String appName = 'Karmas';
+  static const String fontFamily = 'Urbanist';
+
   static const String loginScreenHeading =
       'Welcome back! Glad  \nto see you, Again!';
 

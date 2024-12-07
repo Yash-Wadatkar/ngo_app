@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/routes/app_router.dart';
 import 'package:ngo_app/core/utils/theme/theme.dart';
-import 'package:sizer/sizer.dart'; // Ensure Sizer package is imported
 
 void main() {
   runApp(MyApp());
@@ -9,13 +10,17 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
+
   final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      /// Use builder method for Sizer
-      builder: (context, orientation, deviceType) {
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, Widget? child) {
+        /// Use builder method for Sizer
         return MaterialApp.router(
           routerConfig: _appRouter.config(),
 
@@ -25,6 +30,7 @@ class MyApp extends StatelessWidget {
 
           /// for light theme of application
           theme: TAppTheme.lightTheme,
+          color: AppColors.whiteColor,
 
           /// for dark theme of the application
           darkTheme: TAppTheme.darkTheme,
