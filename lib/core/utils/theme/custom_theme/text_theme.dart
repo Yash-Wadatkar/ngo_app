@@ -9,14 +9,36 @@ class TTextTheme {
   /// customizable light text  theme
   static TextTheme lightTextTheme = TextTheme(
       headlineLarge: TextStyle(
+          overflow: TextOverflow.ellipsis,
           color: AppColors.blackColor,
-          fontSize: AppSizes.fSize30,
-          fontWeight: AppSizes.fontWeight700));
+          fontSize: AppSizes.fSize25,
+          fontWeight: AppSizes.fontWeight700),
+      headlineMedium: TextStyle(
+          overflow: TextOverflow.ellipsis,
+          color: AppColors.lightGreyColor,
+          fontSize: AppSizes.fSize16,
+          fontWeight: AppSizes.fontWeight500),
+      bodySmall: TextStyle(
+          overflow: TextOverflow.ellipsis,
+          color: AppColors.lightGreyColor,
+          fontSize: AppSizes.fSize14,
+          fontWeight: AppSizes.fontWeight500));
 
   /// customizable dark text  theme
   static TextTheme darkTextTheme = TextTheme(
       headlineLarge: TextStyle(
+          overflow: TextOverflow.ellipsis,
           color: AppColors.whiteColor,
-          fontSize: AppSizes.fSize30,
-          fontWeight: AppSizes.fontWeight700));
+          fontSize: AppSizes.fSize25,
+          fontWeight: AppSizes.fontWeight700),
+      headlineMedium: TextStyle(
+          overflow: TextOverflow.ellipsis,
+          color: AppColors.whiteColor,
+          fontSize: AppSizes.fSize16,
+          fontWeight: AppSizes.fontWeight500),
+      bodySmall: TextStyle(
+          overflow: TextOverflow.ellipsis,
+          color: AppColors.whiteColor,
+          fontSize: AppSizes.fSize14,
+          fontWeight: AppSizes.fontWeight500));
 }
