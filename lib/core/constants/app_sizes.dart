@@ -19,13 +19,17 @@ class AppSizes {
   static double fSize20 = 20.sp;
   static double fSize22 = 22.sp;
   static double fSize24 = 24.sp;
+  static double fSize25 = 25.sp;
   static double fSize26 = 26.sp;
+  static double fSize27 = 27.sp;
   static double fSize28 = 28.sp;
+  static double fSize29 = 29.sp;
   static double fSize30 = 30.sp;
 
   /// Heights as percentages of screen height
   static double hSize2 = 2.h;
   static double hSize4 = 4.h;
+  static double hSize5 = 5.h;
   static double hSize6 = 6.h;
   static double hSize8 = 8.h;
   static double hSize10 = 10.h;
@@ -34,6 +38,7 @@ class AppSizes {
   static double hSize16 = 16.h;
   static double hSize18 = 18.h;
   static double hSize20 = 20.h;
+  static double hSize40 = 40.h;
 
   /// Widths as percentages of screen width
   static double wSize2 = 2.w;
@@ -52,7 +57,12 @@ class AppSizes {
   static double radius4 = 4.sp;
   static double radius6 = 6.sp;
   static double radius8 = 8.sp;
+  static double radius9 = 9.sp;
   static double radius10 = 10.sp;
+  static double radius11 = 11.sp;
+  static double radius12 = 12.sp;
+  static double radius13 = 13.sp;
+  static double radius14 = 14.sp;
   static double radius20 = 20.sp;
   static double radius30 = 30.sp;
 
@@ -62,6 +72,10 @@ class AppSizes {
   static SizedBox height6 = SizedBox(height: 6.h);
   static SizedBox height8 = SizedBox(height: 8.h);
   static SizedBox height10 = SizedBox(height: 10.h);
+  static SizedBox height12 = SizedBox(height: 12.h);
+  static SizedBox height14 = SizedBox(height: 14.h);
+  static SizedBox height16 = SizedBox(height: 16.h);
+  static SizedBox height20 = SizedBox(height: 20.h);
 
   /// SizedBox Widths
   static SizedBox width2 = SizedBox(width: 2.w);
@@ -76,6 +90,9 @@ class AppSizes {
   static EdgeInsets padding6 = EdgeInsets.all(6.sp);
   static EdgeInsets padding8 = EdgeInsets.all(8.sp);
   static EdgeInsets padding10 = EdgeInsets.all(10.sp);
+  static EdgeInsets padding12 = EdgeInsets.all(12.sp);
+  static EdgeInsets padding14 = EdgeInsets.all(14.sp);
+  static EdgeInsets padding16 = EdgeInsets.all(16.sp);
 
   /// Symmetric Padding
   static EdgeInsets symmetricPadding2 =
@@ -96,6 +113,26 @@ class AppSizes {
   static EdgeInsets horizontalPadding8 = EdgeInsets.symmetric(horizontal: 8.w);
   static EdgeInsets horizontalPadding10 =
       EdgeInsets.symmetric(horizontal: 10.w);
+  static EdgeInsets horizontalPadding12 =
+      EdgeInsets.symmetric(horizontal: 12.w);
+  static EdgeInsets horizontalPadding14 =
+      EdgeInsets.symmetric(horizontal: 14.w);
+  static EdgeInsets horizontalPadding16 =
+      EdgeInsets.symmetric(horizontal: 16.w);
+  static EdgeInsets horizontalPadding18 =
+      EdgeInsets.symmetric(horizontal: 18.w);
+  static EdgeInsets horizontalPadding20 =
+      EdgeInsets.symmetric(horizontal: 20.w);
+  static EdgeInsets horizontalPadding22 =
+      EdgeInsets.symmetric(horizontal: 22.w);
+  static EdgeInsets horizontalPadding24 =
+      EdgeInsets.symmetric(horizontal: 24.w);
+  static EdgeInsets horizontalPadding26 =
+      EdgeInsets.symmetric(horizontal: 26.w);
+  static EdgeInsets horizontalPadding28 =
+      EdgeInsets.symmetric(horizontal: 28.w);
+  static EdgeInsets horizontalPadding30 =
+      EdgeInsets.symmetric(horizontal: 30.w);
 
   /// Font Weights
   static FontWeight fontWeight300 = FontWeight.w300;
