@@ -30,7 +30,7 @@ class ChatListingScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Flexible(
+          Expanded(
             flex: 1,
             child: ListView.separated(
               itemCount: 30,
@@ -56,8 +56,8 @@ class ChatListingScreen extends StatelessWidget {
   }
 
   Widget _messageContent() {
-    return Flexible(
-      flex: 6,
+    return Expanded(
+      flex: 4,
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.backgroundColor,

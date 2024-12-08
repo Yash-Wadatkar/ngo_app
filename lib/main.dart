@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
-      splitScreenMode: true,
+      splitScreenMode: false,
       builder: (context, Widget? child) {
         /// Use builder method for Sizer
         return MaterialApp.router(
