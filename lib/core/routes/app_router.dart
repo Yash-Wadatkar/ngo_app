@@ -6,7 +6,7 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         /// routes for bottom navbar
-        AutoRoute(page: BottomNavbarWidget.page, initial: true, children: [
+        AutoRoute(page: BottomNavbarWidget.page, children: [
           AutoRoute(page: HomeRoute.page),
           AutoRoute(page: SearchRoute.page),
           AutoRoute(page: NotificationRoute.page),
@@ -14,7 +14,10 @@ class AppRouter extends RootStackRouter {
         ]),
 
         /// routes for auth screens
-        AutoRoute(page: LoginRoute.page),
+        AutoRoute(
+          page: LoginRoute.page,
+          initial: true,
+        ),
         AutoRoute(
           page: RegisterRouteWidget.page,
         ),
@@ -24,6 +27,7 @@ class AppRouter extends RootStackRouter {
 
         AutoRoute(page: CreateNewPasswordRoute.page),
         AutoRoute(page: OtpVerificationRoute.page),
-        AutoRoute(page: ChatListingRoute.page)
+        AutoRoute(page: ChatListingRoute.page),
+        AutoRoute(page: MessageRoute.page)
       ];
 }

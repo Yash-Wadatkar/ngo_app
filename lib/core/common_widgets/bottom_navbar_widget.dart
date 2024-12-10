@@ -23,7 +23,7 @@ class BottomNavbarWidget extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],
           iconSize: AppSizes.wSize8,
-          selectedItemColor: AppColors.kPrimaryColor,
+          selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: AppColors.greyColor,
           onTap: tabsRouter.setActiveIndex,
           currentIndex: tabsRouter.activeIndex,

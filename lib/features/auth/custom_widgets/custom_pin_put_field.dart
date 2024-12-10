@@ -20,7 +20,7 @@ class CustomPinPutField extends StatelessWidget {
         color: AppColors.whiteColor, // Background color
         borderRadius: BorderRadius.circular(8), // Rounded corners
         border: Border.all(
-            color: AppColors.kPrimaryColor, width: 1.5), // Border color
+            color: AppColors.primaryColor, width: 1.5), // Border color
       ),
     );
 

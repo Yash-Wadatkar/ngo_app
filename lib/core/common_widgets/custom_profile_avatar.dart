@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 
-import 'custom_image.dart';
+import '../../../core/common_widgets/custom_image.dart';
 import 'custom_text_widget.dart';
 
 class CustomProfileAvatar extends StatelessWidget {

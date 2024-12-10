@@ -3,7 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_images.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
-import 'package:ngo_app/features/auth/custom_widgets/custom_text_widget.dart';
+
+import '../../../core/common_widgets/custom_text_widget.dart';
 
 class CustomAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {

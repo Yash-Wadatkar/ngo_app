@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
-import 'package:ngo_app/features/auth/custom_widgets/custom_text_widget.dart';
 
-import '../../../core/constants/app_colors.dart';
+import '../constants/app_colors.dart';
+import 'common_title_subtitle_text.dart';
 import 'custom_image.dart';
+import 'custom_text_widget.dart';
 
 class CustomProfileListContent extends StatelessWidget {
   final String? imagePath;
@@ -67,23 +68,10 @@ class CustomProfileListContent extends StatelessWidget {
         ),
         AppSizes.width15,
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomTextWidget(
-                text: profileName,
-                fontWeight: FontWeight.w600,
-                fontSize: AppSizes.fSize16,
-              ),
-              AppSizes.height4,
-              CustomTextWidget(
-                text: profileMessage,
-                fontWeight: FontWeight.w400,
-                fontSize: AppSizes.fSize12,
-              )
-            ],
-          ),
-        ),
+            child: TitleSubtitleInColumn(
+          title: profileName,
+          subTitle: profileMessage,
+        )),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
