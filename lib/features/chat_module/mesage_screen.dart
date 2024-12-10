@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:ngo_app/core/common_widgets/custom_text_widget.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_strings.dart';
@@ -48,7 +51,10 @@ class _MessageScreenState extends State<MessageScreen> {
         onSendTap: _sendMessage,
         messageController: _messageController,
         onAttachTap: () {
-          customBottomSheet(context, widget: BottomSheetContent());
+          customBottomSheet(context,
+              widget: BottomSheetContent(
+                onCameraClick: () => _openCamera(),
+              ));
         },
       ),
       body: _bodyUI(),
@@ -187,5 +193,18 @@ class _MessageScreenState extends State<MessageScreen> {
         }
       }
     });
+  }
+
+  final ImagePicker _picker = ImagePicker();
+  File? _image;
+
+  Future<void> _openCamera() async {
+    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
+    if (image != null) {
+      setState(() {
+        _image = File(image.path); // Save the image file
+      });
+      print('Image picked: ${_image?.path}');
+    }
   }
 }

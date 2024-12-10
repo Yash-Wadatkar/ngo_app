@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BottomSheetContent extends StatelessWidget {
-  const BottomSheetContent({super.key});
+  final VoidCallback onCameraClick;
+
+  BottomSheetContent({
+    super.key,
+    required this.onCameraClick,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,9 @@ class BottomSheetContent extends StatelessWidget {
           leading: Icon(Icons.camera_alt, color: Colors.grey),
           title: Text('Camera'),
           subtitle: Text('Capture photos or videos'),
-          onTap: () {},
+          onTap: () {
+            onCameraClick();
+          },
         ),
         ListTile(
           leading: Icon(Icons.document_scanner, color: Colors.grey),
