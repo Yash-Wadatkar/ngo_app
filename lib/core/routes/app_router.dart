@@ -7,7 +7,7 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
         /// routes for bottom navbar
         AutoRoute(page: BottomNavbarWidget.page, initial: true, children: [
-          AutoRoute(page: HomeRoute.page),
+          AutoRoute(page: DrawerRoute.page),
           AutoRoute(page: SearchRoute.page),
           AutoRoute(page: NotificationRoute.page),
           AutoRoute(page: ProfileRoute.page),

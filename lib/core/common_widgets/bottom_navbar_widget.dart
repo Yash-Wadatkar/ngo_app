@@ -11,22 +11,80 @@ class BottomNavbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: [HomeRoute(), SearchRoute(), NotificationRoute(), ProfileRoute()],
+      routes: [DrawerRoute(), SearchRoute(), NotificationRoute(), ProfileRoute()],
       bottomNavigationBuilder: (context, tabsRouter) {
-        return BottomNavigationBar(
-          backgroundColor: AppColors.whiteColor,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.notification_add), label: 'Notification'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-          ],
-          iconSize: AppSizes.wSize8,
-          selectedItemColor: AppColors.kPrimaryColor,
-          unselectedItemColor: AppColors.greyColor,
-          onTap: tabsRouter.setActiveIndex,
-          currentIndex: tabsRouter.activeIndex,
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 22),
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColors.whiteColor,
+              borderRadius: BorderRadius.circular(30), // Rounded border
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 5,
+                  offset: const Offset(0, 2), // Shadow position
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius:
+                  BorderRadius.circular(30), // Ensure clipping for roundness
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: BottomNavigationBar(
+                  
+                  backgroundColor: AppColors.whiteColor,
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: Image.asset(
+                       
+                        tabsRouter.activeIndex == 0
+                            // Selected 
+                            ?  'assets/icons/ic_home_icon.png':
+                            'assets/icons/ic_unselected_home_icon.png'  // Unselected color
+                      ),
+                      label: 'Home',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Image.asset(
+                        'assets/icons/ic_search_icon.png',
+                        color: tabsRouter.activeIndex == 1
+                            ? AppColors.kPrimaryColor
+                            : null,
+                      ),
+                      label: 'Search',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Image.asset(
+                        'assets/icons/ic_notification_icon.png',
+                        color: tabsRouter.activeIndex == 2
+                            ? AppColors.kPrimaryColor
+                            : null,
+                      ),
+                      label: 'Notification',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Image.asset(
+                        'assets/icons/ic_user_profile_icon.png',
+                        color: tabsRouter.activeIndex == 3
+                            ? AppColors.kPrimaryColor
+                            : null
+                      ),
+                      label: 'Profile',
+                    ),
+                  ],
+                  iconSize: AppSizes.wSize8,
+                  selectedItemColor: AppColors.kPrimaryColor,
+                  unselectedItemColor: AppColors.greyColor,
+                  onTap: tabsRouter.setActiveIndex,
+                  currentIndex: tabsRouter.activeIndex,
+                  type: BottomNavigationBarType.fixed, // Avoid shifting effect
+                  elevation: 0, // Remove BottomNavigationBar shadow
+                ),
+              ),
+            ),
+          ),
         );
       },
     );
