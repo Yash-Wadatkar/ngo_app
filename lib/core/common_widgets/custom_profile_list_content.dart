@@ -78,7 +78,7 @@ class CustomProfileListContent extends StatelessWidget {
             CustomTextWidget(
               text: msgTime,
               fontWeight: FontWeight.w200,
-              fontSize: AppSizes.fSize12,
+              fontSize: 12,
             ),
             AppSizes.height4,
             CircleAvatar(
@@ -87,7 +87,7 @@ class CustomProfileListContent extends StatelessWidget {
               child: CustomTextWidget(
                 text: noOfMsg ?? "",
                 fontWeight: FontWeight.bold,
-                fontSize: AppSizes.fSize12,
+                fontSize: 10,
                 color: AppColors.whiteColor,
               ),
             ),

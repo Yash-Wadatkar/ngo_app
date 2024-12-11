@@ -40,7 +40,7 @@ class _MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.whiteColor,
       appBar: ChatAppbar(
         profileName: "Faraz",
@@ -77,11 +77,10 @@ class _MessageScreenState extends State<MessageScreen> {
         );
         setState(() {
           _messages.add(newMessage);
-          _messageKeys
-              .add(GlobalKey()); // Add a new GlobalKey for the new message
+          _messageKeys.add(GlobalKey());
         });
       }
-      _messageController.clear(); // Clear the text field
+      _messageController.clear();
     }
   }
 
@@ -202,7 +201,16 @@ class _MessageScreenState extends State<MessageScreen> {
     final XFile? image = await _picker.pickImage(source: ImageSource.camera);
     if (image != null) {
       setState(() {
-        _image = File(image.path); // Save the image file
+        _image = File(image.path);
+        _messages.add(
+          ChatMessage(
+            message: '[Image]', // Placeholder message for the image
+            time: _getCurrentTime(),
+            sent: true,
+            imageFile: _image, // Add the image to the ChatMessage
+          ),
+        );
+        _messageKeys.add(GlobalKey()); // Add key for the new message
       });
       print('Image picked: ${_image?.path}');
     }
