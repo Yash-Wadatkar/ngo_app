@@ -1,12 +1,13 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 
+import '../../core/common_widgets/custom_profile_avatar.dart';
+import '../../core/common_widgets/custom_profile_list_content.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/appbar_title.dart';
+import '../../core/routes/app_router.gr.dart';
 import '../auth/custom_widgets/custom_app_bar_widget.dart';
-import '../auth/custom_widgets/custom_profile_avatar.dart';
-import '../auth/custom_widgets/custom_profile_list_content.dart';
 
 @RoutePage()
 class ChatListingScreen extends StatelessWidget {
@@ -69,11 +70,16 @@ class ChatListingScreen extends StatelessWidget {
           primary: false,
           shrinkWrap: true,
           itemBuilder: (context, index) {
-            return CustomProfileListContent(
-              profileName: "Faraz",
-              profileMessage: "How are you?",
-              noOfMsg: "01",
-              msgTime: "2 mins ago",
+            return InkWell(
+              onTap: () {
+                context.pushRoute(MessageRoute());
+              },
+              child: CustomProfileListContent(
+                profileName: "Faraz",
+                profileMessage: "How are you?",
+                noOfMsg: "01",
+                msgTime: "2 mins ago",
+              ),
             );
           },
           separatorBuilder: (BuildContext context, int index) {

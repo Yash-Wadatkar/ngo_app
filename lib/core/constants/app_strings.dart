@@ -10,6 +10,7 @@ class AppStrings {
   static const String enterYourEmailText = 'Enter your email';
   static const String enterYourPasswordText = 'Enter your password';
   static const String forgotPasswordText = 'Forgot Password?';
+  static const String writeYourMessage = 'Write your message';
   static const String loginText = 'Login';
   static const String orLoginWithText = 'Or Login with';
   static const String dontHaveAnAccountText = 'Don’t have an account? ';
@@ -34,4 +35,11 @@ class AppStrings {
   static const String otpVerificationScreenSubHeading =
       'Enter the verification code we just sent on your\nemail address.';
   static const String verify = 'Verify';
+  static const String delete = 'Delete';
+  static const String cancel = 'Cancel';
+  static const String edit = 'Edit';
+  static const String pinned = 'Pinned';
+  static const String deleteMessage = "Delete Message";
+  static const String confirmationDeleteMessage =
+      "Are you sure you want to delete this message?";
 }

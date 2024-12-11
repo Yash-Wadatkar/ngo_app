@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:sizer/sizer.dart';
 
 /* This class provides static references to commonly 
 used sizes such as sizes, heights, widths, and paddings, 
