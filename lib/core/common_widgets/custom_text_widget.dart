@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
-import 'package:ngo_app/core/constants/app_sizes.dart';
 
 import '../../../core/constants/app_strings.dart';
 
@@ -77,7 +76,7 @@ class CustomTextWidget extends StatelessWidget {
             inherit: inherit,
             color: color ?? AppColors.blackColor,
             backgroundColor: backgroundColor,
-            fontSize: fontSize?.sp ?? AppSizes.fSize12.sp,
+            fontSize: fontSize ?? 12,
             fontWeight: fontWeight,
             fontStyle: fontStyle,
             letterSpacing: letterSpacing,

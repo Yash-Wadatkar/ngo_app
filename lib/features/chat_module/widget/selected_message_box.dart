@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ngo_app/core/constants/app_colors.dart';
+import 'package:ngo_app/core/constants/app_sizes.dart';
 
 class SelectedMessageBox extends StatelessWidget {
   final String selectedMessage;
@@ -17,16 +19,16 @@ class SelectedMessageBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-      padding: const EdgeInsets.all(12.0),
+      margin: EdgeInsets.symmetric(
+          horizontal: AppSizes.wSize10, vertical: AppSizes.hSize8),
+      padding: EdgeInsets.all(AppSizes.wSize10),
       decoration: BoxDecoration(
-        color: Colors.grey[100], // Light background
+        color: AppColors.greyColor,
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Sender Label (e.g., "You")
           Text(
             isSentByMe ? "You" : "Sender",
             style: const TextStyle(

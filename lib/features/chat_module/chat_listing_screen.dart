@@ -28,65 +28,57 @@ class ChatListingScreen extends StatelessWidget {
   Widget _bodyUI() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            flex: 1,
-            child: ListView.separated(
-              itemCount: 30,
-              shrinkWrap: true,
-              primary: false,
-              physics: AlwaysScrollableScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return CustomProfileAvatar(
-                  profileName: "Faraz",
-                  isOnline: true,
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return AppSizes.width15;
-              },
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 100,
+              child: ListView.separated(
+                itemCount: 30,
+                shrinkWrap: true,
+                primary: false,
+                physics: AlwaysScrollableScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return CustomProfileAvatar(
+                    profileName: "Faraz",
+                    isOnline: true,
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return AppSizes.width15;
+                },
+              ),
             ),
-          ),
-          _messageContent()
-        ],
+            _messageContent()
+          ],
+        ),
       ),
     );
   }
 
   Widget _messageContent() {
-    return Expanded(
-      flex: 4,
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.backgroundColor,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        padding: EdgeInsets.symmetric(vertical: AppSizes.hSize10),
-        child: ListView.separated(
-          itemCount: 30,
-          primary: false,
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                context.pushRoute(MessageRoute());
-              },
-              child: CustomProfileListContent(
-                profileName: "Faraz",
-                profileMessage: "How are you?",
-                noOfMsg: "01",
-                msgTime: "2 mins ago",
-              ),
-            );
+    return ListView.separated(
+      itemCount: 30,
+      primary: false,
+      shrinkWrap: true,
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: () {
+            context.pushRoute(MessageRoute());
           },
-          separatorBuilder: (BuildContext context, int index) {
-            return AppSizes.height20;
-          },
-        ),
-      ),
+          child: CustomProfileListContent(
+            profileName: "Faraz",
+            profileMessage: "How are you?",
+            noOfMsg: "01",
+            msgTime: "2 mins ago",
+          ),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) {
+        return AppSizes.height20;
+      },
     );
   }
 }

@@ -40,7 +40,7 @@ class _MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.whiteColor,
       appBar: ChatAppbar(
         profileName: "Faraz",
@@ -77,11 +77,10 @@ class _MessageScreenState extends State<MessageScreen> {
         );
         setState(() {
           _messages.add(newMessage);
-          _messageKeys
-              .add(GlobalKey()); // Add a new GlobalKey for the new message
+          _messageKeys.add(GlobalKey());
         });
       }
-      _messageController.clear(); // Clear the text field
+      _messageController.clear();
     }
   }
 
