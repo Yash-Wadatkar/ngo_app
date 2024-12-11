@@ -48,6 +48,8 @@ dependencies:
   flutter_screenutil: ^5.9.3
   font_awesome_flutter: ^10.8.0
   image_picker: ^1.1.2
+  talker: ^4.5.2
+  talker_bloc_logger: ^4.5.2
 
 dev_dependencies:
   auto_route_generator:
