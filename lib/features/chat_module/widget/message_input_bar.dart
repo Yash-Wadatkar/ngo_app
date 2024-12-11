@@ -28,7 +28,7 @@ class MessageInputBar extends StatelessWidget {
         children: [
           Expanded(
             flex: 0,
-            child: InkWell(
+            child: GestureDetector(
               onTap: onAttachTap,
               child: Icon(
                 FontAwesomeIcons.paperclip,
@@ -48,7 +48,7 @@ class MessageInputBar extends StatelessWidget {
           AppSizes.width10,
           Expanded(
             flex: 0,
-            child: InkWell(
+            child: GestureDetector(
               onTap: onSendTap,
               child: CircleAvatar(
                 radius: AppSizes.hSize30,
@@ -64,7 +64,7 @@ class MessageInputBar extends StatelessWidget {
           AppSizes.width10,
           Expanded(
             flex: 0,
-            child: InkWell(
+            child: GestureDetector(
               onTap: onMicTap,
               child: Icon(
                 Icons.mic_none_sharp,

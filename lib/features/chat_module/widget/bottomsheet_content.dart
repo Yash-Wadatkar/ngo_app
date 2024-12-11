@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BottomSheetContent extends StatelessWidget {
   final VoidCallback onCameraClick;
 
-  BottomSheetContent({
+  const BottomSheetContent({
     super.key,
     required this.onCameraClick,
   });
