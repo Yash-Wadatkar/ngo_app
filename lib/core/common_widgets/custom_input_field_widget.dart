@@ -25,9 +25,7 @@ class CustomInputFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: AppSizes.hSize2),
-      child: FormBuilderTextField(
+    return FormBuilderTextField(
         name: name,
         style: TextStyle(
           fontSize: AppSizes.fSize14,
@@ -41,27 +39,26 @@ class CustomInputFieldWidget extends StatelessWidget {
         obscureText: obscureText,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(
-            focusColor: AppColors.primaryColor,
-            contentPadding: AppSizes.padding16,
-            hintText: hintText,
-            hintStyle: TextStyle(
-              fontSize: AppSizes.fSize14,
-              fontWeight: AppSizes.fontWeight500,
-              color: AppColors.primaryColor,
-            ),
-            fillColor: AppColors.textFieldFillColor,
-            filled: true,
-            suffixIcon: icon ?? const SizedBox(),
-            border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide.none,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide.none,
-            )),
-      ),
-    );
+          focusColor: AppColors.primaryColor,
+          contentPadding: AppSizes.padding16,
+          hintText: hintText,
+          hintStyle: TextStyle(
+            fontSize: AppSizes.fSize14,
+            fontWeight: AppSizes.fontWeight500,
+            color: AppColors.primaryColor,
+          ),
+          fillColor: AppColors.textFieldFillColor,
+          filled: true,
+          suffixIcon: icon ?? const SizedBox(),
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide.none,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide.none,
+          ),
+        ));
   }
 }

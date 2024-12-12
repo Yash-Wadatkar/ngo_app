@@ -26,7 +26,6 @@ class CommonProfilePhoto extends StatelessWidget {
         Stack(
           children: [
             CircleAvatar(
-              radius: width / 2,
               backgroundColor: backgroundColor,
               child: ClipOval(
                 child: imagePath != null && imagePath!.isNotEmpty
@@ -48,7 +47,7 @@ class CommonProfilePhoto extends StatelessWidget {
                 bottom: 0,
                 right: 2,
                 child: CircleAvatar(
-                    radius: 4, backgroundColor: AppColors.onlineColor),
+                    radius: 5, backgroundColor: AppColors.onlineColor),
               ),
           ],
         ),

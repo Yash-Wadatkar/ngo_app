@@ -53,6 +53,7 @@ class AppSizes {
   static double wSize18 = 18.w;
   static double wSize20 = 20.w;
   static double wSize30 = 30.w;
+  static double wSize100 = 100.w;
 
   /// Radius sizes
   static double radius2 = 2.sp;
