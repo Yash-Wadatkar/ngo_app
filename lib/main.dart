@@ -7,7 +7,7 @@ import 'package:ngo_app/core/utils/theme/theme.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 
 void main() {
-   Bloc.observer = TalkerBlocObserver(
+  Bloc.observer = TalkerBlocObserver(
     settings: TalkerBlocLoggerSettings(
       enabled: true,
       printEventFullData: false,
@@ -59,3 +59,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

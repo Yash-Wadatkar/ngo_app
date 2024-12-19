@@ -30,6 +30,8 @@ class ChatListingScreen extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
         child: Column(
+        
+          
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(

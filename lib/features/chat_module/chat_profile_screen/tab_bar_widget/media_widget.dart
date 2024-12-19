@@ -30,8 +30,8 @@ class _MediaToggleScreenState extends State<MediaWidget> {
         child: Column(
           children: [
             CommonToggleSwitch(
-                label: ["Image", "Video"],
-                toggleFunction: (index) async {
+                label: ["Photos", "Videos"],
+                toggleFunction: (index) {
                   setState(() {
                     selectedIndex = index ?? 0;
                   });
@@ -39,7 +39,7 @@ class _MediaToggleScreenState extends State<MediaWidget> {
                 totalSwitches: 2,
                 initialLabelIndex: 0),
             AppSizes.height20,
-            selectedIndex == 0 ? _imageGridView() : _videoGridView(),
+            selectedIndex == 0 ? _videoGridView() : _imageGridView(),
           ],
         ),
       ),
@@ -53,11 +53,13 @@ class _MediaToggleScreenState extends State<MediaWidget> {
         shrinkWrap: true,
         primary: false,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-        ),
+            crossAxisCount: 3, crossAxisSpacing: 10, mainAxisSpacing: 10),
         itemBuilder: (BuildContext context, int index) {
           return CustomImage(
-            imagePath: "assets/images/app_logo.svg",
+            height: 40,
+            isSvg: false,
+            width: 40,
+            imagePath: "assets/images/image_sample.jpg",
           );
         });
   }
@@ -72,7 +74,11 @@ class _MediaToggleScreenState extends State<MediaWidget> {
             crossAxisCount: 3, crossAxisSpacing: 10, mainAxisSpacing: 10),
         itemBuilder: (BuildContext context, int index) {
           return CustomImage(
-            imagePath: "assets/images/success_image.svg",
+            height: 40,
+            width: 40,
+            isSvg: false,
+            imagePath:
+                "assets/images/image_sample.jpg", // Replace with video preview if needed
           );
         });
   }
