@@ -7,6 +7,7 @@ class CustomImage extends StatelessWidget {
   final double? width;
   final double? height;
   final BoxFit fit;
+  final bool isSvg;
 
   const CustomImage({
     super.key,
@@ -14,15 +15,24 @@ class CustomImage extends StatelessWidget {
     this.width,
     this.height,
     this.fit = BoxFit.cover,
+    this.isSvg = true,
   });
 
-  @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      imagePath,
-      width: width ?? AppSizes.wSize30,
-      height: height ?? AppSizes.hSize30,
-      fit: fit,
-    );
+    if (isSvg) {
+      return SvgPicture.asset(
+        imagePath,
+        width: width ?? AppSizes.wSize30,
+        height: height ?? AppSizes.hSize30,
+        fit: fit,
+      );
+    } else {
+      return Image.asset(
+        imagePath,
+        width: width ?? AppSizes.wSize30,
+        height: height ?? AppSizes.hSize30,
+        fit: fit,
+      );
+    }
   }
 }

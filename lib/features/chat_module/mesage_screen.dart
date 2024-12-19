@@ -1,11 +1,12 @@
 import 'dart:io';
 
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ngo_app/core/common_widgets/custom_text_widget.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_strings.dart';
+import 'package:ngo_app/core/routes/app_router.gr.dart';
 import 'package:ngo_app/features/chat_module/widget/bottomsheet_content.dart';
 import 'package:ngo_app/features/chat_module/widget/chat_appbar.dart';
 import 'package:ngo_app/features/chat_module/widget/custom_bottom_sheet.dart';
@@ -25,14 +26,30 @@ class MessageScreen extends StatefulWidget {
 
 class _MessageScreenState extends State<MessageScreen> {
   int? _editingIndex;
+  bool? selectedMessage;
   final TextEditingController _messageController = TextEditingController();
   final List<ChatMessage> _messages = [
-    ChatMessage(message: "K, I'm on my way", time: "07:22 PM", sent: true),
+    ChatMessage(
+        message: "K, I'm on my way",
+        time: "07:22 PM",
+        sent: true,
+        isAlreadyMessageSelected: false),
     ChatMessage(
         message: "Okay, let me know when you arrive",
         time: "07:23 PM",
+        replyMessage: "123456789",
+        isAlreadyMessageSelected: true,
         sent: false),
-    ChatMessage(message: "Sure", time: "07:24 PM", sent: true),
+    ChatMessage(
+        message: "Sure",
+        time: "07:24 PM",
+        sent: true,
+        isAlreadyMessageSelected: false),
+    ChatMessage(
+        message: "Thanks",
+        time: "07:24 PM",
+        sent: false,
+        isAlreadyMessageSelected: false),
   ];
 
   final List<GlobalKey> _messageKeys = [];
@@ -43,6 +60,9 @@ class _MessageScreenState extends State<MessageScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.whiteColor,
       appBar: ChatAppbar(
+        onTap: () {
+          context.pushRoute(ChatProfileRoute());
+        },
         profileName: "Faraz",
         profileLastSeen: "Active now",
         isOnline: true,
@@ -71,10 +91,10 @@ class _MessageScreenState extends State<MessageScreen> {
         _editingIndex = null;
       } else {
         final newMessage = ChatMessage(
-          message: text,
-          time: _getCurrentTime(),
-          sent: true,
-        );
+            message: text,
+            time: _getCurrentTime(),
+            sent: true,
+            isAlreadyMessageSelected: selectedMessage ?? false);
         setState(() {
           _messages.add(newMessage);
           _messageKeys.add(GlobalKey());
@@ -109,10 +129,14 @@ class _MessageScreenState extends State<MessageScreen> {
               onTap: () {
                 _showPopupMenu(context, index);
               },
+              onDoubleTap: () {},
               child: MessageBox(
+                isSelectedMessage: message.isAlreadyMessageSelected,
                 message: message.message,
                 receivedTime: message.time,
+                selectedMessage: message.message,
                 messageSent: message.sent,
+                replyMessage: message.replyMessage ?? "",
               ),
             ),
           );
@@ -204,15 +228,16 @@ class _MessageScreenState extends State<MessageScreen> {
         _image = File(image.path);
         _messages.add(
           ChatMessage(
-            message: '[Image]', // Placeholder message for the image
+            isMessageSelected: true,
+            message: '[Image]',
             time: _getCurrentTime(),
             sent: true,
-            imageFile: _image, // Add the image to the ChatMessage
+            imageFile: _image,
+            isAlreadyMessageSelected: false,
           ),
         );
-        _messageKeys.add(GlobalKey()); // Add key for the new message
+        _messageKeys.add(GlobalKey());
       });
-      print('Image picked: ${_image?.path}');
     }
   }
 }

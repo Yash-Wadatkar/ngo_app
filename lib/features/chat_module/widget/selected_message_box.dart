@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ngo_app/core/common_widgets/custom_text_widget.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 
@@ -23,46 +24,58 @@ class SelectedMessageBox extends StatelessWidget {
           horizontal: AppSizes.wSize10, vertical: AppSizes.hSize8),
       padding: EdgeInsets.all(AppSizes.wSize10),
       decoration: BoxDecoration(
-        color: AppColors.greyColor,
-        borderRadius: BorderRadius.circular(10.0),
+        color: AppColors.backgroundColor,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(AppSizes.hSize16),
+          topRight: Radius.circular(AppSizes.hSize16),
+          bottomRight:
+              isSentByMe ? Radius.zero : Radius.circular(AppSizes.hSize16),
+          bottomLeft:
+              !isSentByMe ? Radius.zero : Radius.circular(AppSizes.hSize16),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            isSentByMe ? "You" : "Sender",
-            style: const TextStyle(
-              fontSize: 14.0,
-              color: Colors.blueAccent,
-              fontWeight: FontWeight.bold,
-            ),
+          CustomTextWidget(
+            text: isSentByMe ? "You" : "Sender",
+            fontSize: 14,
+            color: AppColors.primaryColor,
+            fontWeight: FontWeight.bold,
           ),
-          const SizedBox(height: 8.0),
-          // Selected Message
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(6.0),
-            ),
-            child: Text(
-              selectedMessage,
-              style: const TextStyle(fontSize: 16.0, color: Colors.black87),
-            ),
+          AppSizes.height8,
+          ClipPath(
+              clipper: ShapeBorderClipper(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                    color: AppColors.messageSelectedBoxColor,
+                    border: Border(
+                      left: BorderSide(
+                        color: AppColors.primaryColor,
+                        width: 4,
+                      ),
+                    )),
+                child: CustomTextWidget(
+                  text: selectedMessage,
+                  fontSize: 14,
+                ),
+              )),
+          AppSizes.height8,
+          CustomTextWidget(
+            text: replyMessage,
+            fontSize: 12,
           ),
-          const SizedBox(height: 8.0),
-          // Reply Message
-          Text(
-            replyMessage,
-            style: const TextStyle(fontSize: 16.0, color: Colors.black87),
-          ),
-          const SizedBox(height: 6.0),
-          // Timestamp
+          AppSizes.height6,
           Align(
             alignment: Alignment.bottomRight,
-            child: Text(
-              time,
-              style: TextStyle(fontSize: 12.0, color: Colors.grey[600]),
+            child: CustomTextWidget(
+              text: time,
+              fontSize: 10,
             ),
           ),
         ],

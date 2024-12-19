@@ -11,6 +11,7 @@ class MessageInputBar extends StatelessWidget {
   final VoidCallback? onSendTap;
   final VoidCallback? onMicTap;
   final TextEditingController messageController;
+  final String? selectedMessage;
 
   const MessageInputBar({
     super.key,
@@ -18,6 +19,7 @@ class MessageInputBar extends StatelessWidget {
     this.onSendTap,
     this.onMicTap,
     required this.messageController,
+    this.selectedMessage,
   });
 
   @override
@@ -38,7 +40,7 @@ class MessageInputBar extends StatelessWidget {
             ),
           ),
           AppSizes.width10,
-          Expanded(
+          Flexible(
             child: CustomInputFieldWidget(
               name: AppStrings.writeYourMessage,
               hintText: AppStrings.writeYourMessage,

@@ -22,7 +22,7 @@ class TitleSubtitleInColumn extends StatelessWidget {
       children: [
         CustomTextWidget(
           text: title,
-          fontSize: 16,
+          fontSize: 15,
           color: AppColors.blackColor,
         ),
         CustomTextWidget(
