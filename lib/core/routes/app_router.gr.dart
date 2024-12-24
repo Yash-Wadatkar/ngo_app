@@ -26,22 +26,51 @@ import 'package:ngo_app/features/profile/ui/profile_screen.dart' as _i9;
 import 'package:ngo_app/features/search/ui/search_screen.dart' as _i11;
 
 /// generated route for
-/// [_i1.BottomNavbarWidget]
-class BottomNavbarWidget extends _i12.PageRouteInfo<void> {
-  const BottomNavbarWidget({List<_i12.PageRouteInfo>? children})
-      : super(
-          BottomNavbarWidget.name,
+/// [_i1.BottomNavbarWidgetScreen]
+class BottomNavbarWidgetRoute
+    extends _i12.PageRouteInfo<BottomNavbarWidgetRouteArgs> {
+  BottomNavbarWidgetRoute({
+    _i13.Key? key,
+    _i14.ZoomDrawerController? zoomDrawerController,
+    List<_i12.PageRouteInfo>? children,
+  }) : super(
+          BottomNavbarWidgetRoute.name,
+          args: BottomNavbarWidgetRouteArgs(
+            key: key,
+            zoomDrawerController: zoomDrawerController,
+          ),
           initialChildren: children,
         );
 
-  static const String name = 'BottomNavbarWidget';
+  static const String name = 'BottomNavbarWidgetRoute';
 
   static _i12.PageInfo page = _i12.PageInfo(
     name,
     builder: (data) {
-      return const _i1.BottomNavbarWidget();
+      final args = data.argsAs<BottomNavbarWidgetRouteArgs>(
+          orElse: () => const BottomNavbarWidgetRouteArgs());
+      return _i1.BottomNavbarWidgetScreen(
+        key: args.key,
+        zoomDrawerController: args.zoomDrawerController,
+      );
     },
   );
+}
+
+class BottomNavbarWidgetRouteArgs {
+  const BottomNavbarWidgetRouteArgs({
+    this.key,
+    this.zoomDrawerController,
+  });
+
+  final _i13.Key? key;
+
+  final _i14.ZoomDrawerController? zoomDrawerController;
+
+  @override
+  String toString() {
+    return 'BottomNavbarWidgetRouteArgs{key: $key, zoomDrawerController: $zoomDrawerController}';
+  }
 }
 
 /// generated route for
@@ -106,7 +135,7 @@ class ForgotPasswordRoute extends _i12.PageRouteInfo<void> {
 class HomeRoute extends _i12.PageRouteInfo<HomeRouteArgs> {
   HomeRoute({
     _i13.Key? key,
-    required _i14.ZoomDrawerController drawerController,
+    required _i14.ZoomDrawerController? drawerController,
     List<_i12.PageRouteInfo>? children,
   }) : super(
           HomeRoute.name,
@@ -139,7 +168,7 @@ class HomeRouteArgs {
 
   final _i13.Key? key;
 
-  final _i14.ZoomDrawerController drawerController;
+  final _i14.ZoomDrawerController? drawerController;
 
   @override
   String toString() {

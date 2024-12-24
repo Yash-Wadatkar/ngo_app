@@ -6,11 +6,9 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.kPrimaryColor,
-      body: SafeArea(child: Column(
-        children: [],
-      )),
+    return Column(
+      children: []
+      
     );
   }
 }

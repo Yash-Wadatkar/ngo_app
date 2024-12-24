@@ -1,158 +1,112 @@
+import 'package:animated_segmented_tab_control/animated_segmented_tab_control.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
+import 'package:ngo_app/core/constants/app_sizes.dart';
+import 'package:ngo_app/features/home/custom_widgets/custom_home_screen_app_bar_widget.dart';
+import 'package:ngo_app/features/home/custom_widgets/post_card_widget.dart';
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
-  final ZoomDrawerController drawerController;
+class HomeScreen extends StatefulWidget {
+  final ZoomDrawerController? drawerController;
   const HomeScreen({super.key, required this.drawerController});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              color: AppColors.kPrimaryColor,
-              width: double.infinity,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Color(0xff0d5069)),
-                              child: Padding(
-                                padding: EdgeInsets.all(14.0),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    drawerController.toggle!();
-                                  },
-                                  child: Image.asset(
-                                      'assets/icons/ic_hamburger_icon.png'),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(flex: 108, child: SizedBox()),
-                        Text(
-                          overflow: TextOverflow.ellipsis,
-                          'Home',
-                          style: GoogleFonts.urbanist(
-                              fontSize: 22,
-                              color: AppColors.whiteColor,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        Expanded(flex: 108, child: SizedBox()),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Color(0xff0d5069)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(14.0),
-                                child: Image.asset(
-                                    'assets/icons/ic_message_icon.png'),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: CustomHomeScreenAppBarWidget(),
+        body: Padding(
+          padding: AppSizes.horizontalPadding12,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SegmentedTabControl(
+                  controller: _tabController,
+                  splashColor: Colors.transparent,
+                  tabTextColor: Color(0xff808080),
+                  textStyle: GoogleFonts.urbanist(
+                      fontSize: 16, fontWeight: FontWeight.w600),
+                  selectedTabTextColor: AppColors.kPrimaryColor,
+                  barDecoration: BoxDecoration(
+                      border: Border.all(color: Color(0xffF3F4F6), width: 1.2),
+                      shape: BoxShape.rectangle,
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16)),
+                  indicatorPadding: EdgeInsets.all(5),
+                  indicatorDecoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      color: Color(0xffF3FCFF)),
+                  tabs: [
+                    SegmentTab(
+                      label: "Home",
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 28),
-                      child: Row(
-                        children: [
-                          Row(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(22),
-                                child: SizedBox(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset(
-                                        'assets/images/profile_pic_image.png'),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 12),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Hello!',
-                                      overflow: TextOverflow.ellipsis,
-                                      style: GoogleFonts.urbanist(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400,
-                                          color: Color(0xff80a3b0)),
-                                    ),
-                                    Text('Sahail Kadam',
-                                        overflow: TextOverflow.ellipsis,
-                                        style: GoogleFonts.urbanist(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w500,
-                                          color: AppColors.whiteColor,
-                                        ))
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          Expanded(child: SizedBox()),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Current Score',
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.urbanist(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xff80a3b0)),
-                              ),
-                              Text('29',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.urbanist(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.whiteColor,
-                                  ))
-                            ],
-                          )
-                        ],
-                      ),
+                    SegmentTab(
+                      label: "Account",
                     ),
-                    Divider(
-                      color: Color(0xff80a3b0),
-                    ),
-                    Row(
-                      children: [],
-                    )
                   ],
                 ),
               ),
-            )
-          ],
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: TabBarView(
+                    controller: _tabController,
+                    children: [
+                      _homeTabWidget(context: context),
+                      _accountTabWidget(context: context)
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  /// home tab widget
+  Widget _homeTabWidget({required BuildContext context}) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+           PostCardWidget()
+        ],
+      ),
+    );
+       
+      
+   
+  }
+
+  /// account tab widget
+  Widget _accountTabWidget({required BuildContext context}) {
+    return Column(
+      children: [],
     );
   }
 }
