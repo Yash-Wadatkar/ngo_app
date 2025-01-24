@@ -12,6 +12,7 @@ class CommonToggleSwitch extends StatelessWidget {
   final int initialLabelIndex;
   final double? width;
   final double? radius;
+  final List<IconData>? icons;
 
   const CommonToggleSwitch({
     super.key,
@@ -21,6 +22,7 @@ class CommonToggleSwitch extends StatelessWidget {
     required this.toggleFunction,
     required this.totalSwitches,
     required this.initialLabelIndex,
+    this.icons, // Added optional icons
   });
 
   @override
@@ -28,14 +30,14 @@ class CommonToggleSwitch extends StatelessWidget {
     return ToggleSwitch(
       radiusStyle: true,
       centerText: true,
-      icons: [FontAwesomeIcons.image, FontAwesomeIcons.video],
+      icons: icons ?? [FontAwesomeIcons.image, FontAwesomeIcons.video],
       activeFgColor: AppColors.primaryColor,
       inactiveFgColor: AppColors.primaryColor,
       customTextStyles: [
         TextStyle(
             fontSize: AppSizes.fSize14,
             fontWeight: FontWeight.w600,
-            overflow: TextOverflow.visible,
+            overflow: TextOverflow.ellipsis, // Handle text overflow gracefully
             color: AppColors.primaryColor),
       ],
       cornerRadius: radius ?? AppSizes.hSize30,
@@ -44,7 +46,7 @@ class CommonToggleSwitch extends StatelessWidget {
       initialLabelIndex: initialLabelIndex,
       multiLineText: true,
       activeBgColor: [AppColors.toggleSelectedColor],
-      inactiveBgColor: Colors.white,
+      inactiveBgColor: AppColors.whiteColor,
       labels: label,
       totalSwitches: totalSwitches,
       onToggle: toggleFunction,

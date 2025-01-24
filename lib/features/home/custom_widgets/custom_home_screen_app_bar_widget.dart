@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomHomeScreenAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -20,14 +20,15 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: AppColors.kPrimaryColor,
+                  color: AppColors.primaryColor,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(24),
                       bottomRight: Radius.circular(24))),
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 child: Column(
                   children: [
                     Row(
@@ -165,9 +166,9 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
                                   context: context,
                                   imagePath: 'assets/icons/ic_gallery_icon.svg',
                                   mediaText: 'Upload Photo')),
-        
+
                           Expanded(flex: 1, child: SizedBox()),
-        
+
                           /// media widget to upload videos
                           Expanded(
                               flex: 7,

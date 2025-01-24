@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen>
                   tabTextColor: Color(0xff808080),
                   textStyle: GoogleFonts.urbanist(
                       fontSize: 16, fontWeight: FontWeight.w600),
-                  selectedTabTextColor: AppColors.kPrimaryColor,
+                  selectedTabTextColor: AppColors.primaryColor,
                   barDecoration: BoxDecoration(
                       border: Border.all(color: Color(0xffF3F4F6), width: 1.2),
                       shape: BoxShape.rectangle,
@@ -93,14 +93,9 @@ class _HomeScreenState extends State<HomeScreen>
   Widget _homeTabWidget({required BuildContext context}) {
     return SingleChildScrollView(
       child: Column(
-        children: [
-           PostCardWidget()
-        ],
+        children: [PostCardWidget()],
       ),
     );
-       
-      
-   
   }
 
   /// account tab widget

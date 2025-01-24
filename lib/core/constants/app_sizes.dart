@@ -38,6 +38,7 @@ class AppSizes {
   static double hSize16 = 16.h;
   static double hSize18 = 18.h;
   static double hSize20 = 20.h;
+  static double hSize30 = 30.h;
   static double hSize40 = 40.h;
 
   /// Widths as percentages of screen width
@@ -66,6 +67,9 @@ class AppSizes {
   static double wSize46 = 46.w;
   static double wSize48 = 48.w;
   static double wSize50 = 50.w;
+  static double wSize100 = 100.w;
+  static double wSize120 = 120.w;
+  static double wSize150 = 150.w;
 
   /// Radius sizes
   static double radius2 = 2.sp;
@@ -182,6 +186,7 @@ class AppSizes {
   static SizedBox width48 = SizedBox(width: 48.w);
   static SizedBox width49 = SizedBox(width: 49.w);
   static SizedBox width50 = SizedBox(width: 50.w);
+  static SizedBox width120 = SizedBox(width: 120.w);
 
   /// Padding Sizes
   static EdgeInsets padding2 = EdgeInsets.all(2.sp);

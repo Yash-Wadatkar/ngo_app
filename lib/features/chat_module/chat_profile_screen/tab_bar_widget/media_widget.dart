@@ -37,7 +37,7 @@ class _MediaToggleScreenState extends State<MediaWidget> {
                   });
                 },
                 totalSwitches: 2,
-                initialLabelIndex: 0),
+                initialLabelIndex: selectedIndex),
             AppSizes.height20,
             selectedIndex == 0 ? _videoGridView() : _imageGridView(),
           ],

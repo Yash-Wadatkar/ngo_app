@@ -40,6 +40,7 @@ class AppStrings {
   static const String edit = 'Edit';
   static const String pinned = 'Pinned';
   static const String deleteMessage = "Delete Message";
+  static const String search = "Search";
   static const String confirmationDeleteMessage =
       "Are you sure you want to delete this message?";
 }

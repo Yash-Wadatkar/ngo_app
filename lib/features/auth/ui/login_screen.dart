@@ -78,13 +78,13 @@ class LoginScreen extends StatelessWidget {
               CustomButtonWidget(
                 buttonLabel: AppStrings.loginText,
                 ontap: () {
-                  context.pushRoute(ChatListingRoute());
+                  context.pushRoute(RequestTrackingView());
                 },
               ),
 
               AppSizes.height6,
 
-              /// orlogin with text with divider widget
+              /// or login with text with divider widget
               _orLoginWithTextWidget(context),
 
               AppSizes.height4,
@@ -152,7 +152,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  /// dont have account register text widget
+  /// don't have account register text widget
   Widget _dontHaveAccountRegisterWidget(
       {required BuildContext context, void Function()? ontap}) {
     return Center(

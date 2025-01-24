@@ -41,7 +41,7 @@ class MessageInputBar extends StatelessWidget {
           ),
           AppSizes.width10,
           Flexible(
-            child: CustomInputFieldWidget(
+            child: CommonInputFieldWidget(
               name: AppStrings.writeYourMessage,
               hintText: AppStrings.writeYourMessage,
               controller: messageController,

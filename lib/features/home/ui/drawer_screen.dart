@@ -4,7 +4,6 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:ngo_app/core/common_widgets/bottom_navbar_widget.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/routes/app_router.gr.dart';
-import 'package:ngo_app/features/home/ui/home_screen.dart';
 import 'package:ngo_app/features/home/ui/menu_screen.dart';
 
 @RoutePage()
@@ -20,9 +19,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-      ZoomDrawer(
-        
+    return ZoomDrawer(
         controller: drawerController,
         style: DrawerStyle.defaultStyle,
         borderRadius: 24,
@@ -33,13 +30,13 @@ class _DrawerScreenState extends State<DrawerScreen> {
         slideWidth: MediaQuery.of(context).size.width * 0.55,
         mainScreenScale: 0.11,
         drawerShadowsBackgroundColor: const Color(0xff3f7588),
-        menuBackgroundColor: AppColors.kPrimaryColor,
+        menuBackgroundColor: AppColors.primaryColor,
         clipMainScreen: true,
         mainScreenTapClose: true,
-        shadowLayer1Color: AppColors.kPrimaryColor,
+        shadowLayer1Color: AppColors.primaryColor,
         menuScreen: const MenuScreen(),
-        mainScreen: BottomNavbarWidgetScreen(zoomDrawerController: drawerController,)
-      
-    );
+        mainScreen: BottomNavbarWidgetScreen(
+          zoomDrawerController: drawerController,
+        ));
   }
 }

@@ -7,7 +7,6 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 import 'package:ngo_app/core/routes/app_router.gr.dart';
-import 'package:ngo_app/features/home/custom_widgets/custom_home_screen_app_bar_widget.dart';
 
 @RoutePage()
 class BottomNavbarWidgetScreen extends StatelessWidget {
@@ -72,7 +71,7 @@ class BottomNavbarWidgetScreen extends StatelessWidget {
                             animatedIconTheme:
                                 IconThemeData(color: AppColors.whiteColor),
                             direction: SpeedDialDirection.up,
-                            backgroundColor: AppColors.kPrimaryColor,
+                            backgroundColor: AppColors.primaryColor,
                             visible: true,
                             childrenButtonSize: Size(50.w, 55.h),
                             curve: Curves.bounceInOut,
@@ -82,7 +81,7 @@ class BottomNavbarWidgetScreen extends StatelessWidget {
                                 shape: CircleBorder(),
                                 child: SvgPicture.asset(
                                     'assets/icons/ic_animal_icon.svg'),
-                                backgroundColor: AppColors.kPrimaryColor,
+                                backgroundColor: AppColors.primaryColor,
                                 onTap: () {},
                               ),
                               SpeedDialChild(
@@ -90,7 +89,7 @@ class BottomNavbarWidgetScreen extends StatelessWidget {
                                 shape: CircleBorder(),
                                 child: SvgPicture.asset(
                                     'assets/icons/ic_person_icon.svg'),
-                                backgroundColor: AppColors.kPrimaryColor,
+                                backgroundColor: AppColors.primaryColor,
                                 onTap: () {},
                               )
                             ],
@@ -138,7 +137,7 @@ class BottomNavbarWidgetScreen extends StatelessWidget {
         children: [
           Image.asset(
             icon,
-            color: isSelected ? AppColors.kPrimaryColor : AppColors.greyColor,
+            color: isSelected ? AppColors.primaryColor : AppColors.greyColor,
           ),
           Flexible(
             child: Text(
@@ -146,7 +145,8 @@ class BottomNavbarWidgetScreen extends StatelessWidget {
               label,
               style: TextStyle(
                 fontSize: 12,
-                color: isSelected ? AppColors.kPrimaryColor : AppColors.greyColor,
+                color:
+                    isSelected ? AppColors.primaryColor : AppColors.greyColor,
               ),
             ),
           ),
