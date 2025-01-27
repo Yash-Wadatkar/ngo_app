@@ -7,6 +7,8 @@ class AppColors {
   static Color secondaryColor = Color(0xff35C2C1);
   static Color tertiaryColor = Color(0xff107195);
   static Color backgroundColor = Color(0xfffafafa);
+  static Color boxColor = Color(0xffEEFAFF);
+  static Color borderColor = Color(0xffD8E0F0);
   static Color tabBarTextColor = Color(0xff808080);
   static Color whiteColor = Color(0xffffffff);
   static Color blackColor = Color(0xff000000);

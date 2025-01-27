@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:ngo_app/core/common_widgets/common_request_image_card.dart';
+import 'package:ngo_app/core/routes/app_router.gr.dart';
 import 'package:ngo_app/features/auth/custom_widgets/custom_input_field_widget.dart';
 
 import '../../../core/common_widgets/common_app_bar.dart';
@@ -100,7 +101,11 @@ class _RequestTrackingViewState extends State<RequestTrackingView> {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 2),
             child: CommonRequestImageCard(
-              onTap: () => {},
+              onTap: () => {
+                context.navigateTo(
+                  RequestTrackingDetailsView(),
+                ),
+              },
             ),
           );
         },

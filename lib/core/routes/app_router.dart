@@ -32,5 +32,6 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: AccountInfoRoute.page),
         AutoRoute(page: AccountInfoRoute.page),
         AutoRoute(page: RequestTrackingView.page),
+        AutoRoute(page: RequestTrackingDetailsView.page),
       ];
 }
