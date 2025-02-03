@@ -20,9 +20,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-      ZoomDrawer(
-        
+    return ZoomDrawer(
         controller: drawerController,
         style: DrawerStyle.defaultStyle,
         borderRadius: 24,
@@ -37,9 +35,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
         clipMainScreen: true,
         mainScreenTapClose: true,
         shadowLayer1Color: AppColors.kPrimaryColor,
-        menuScreen: const MenuScreen(),
-        mainScreen: BottomNavbarWidgetScreen(zoomDrawerController: drawerController,)
-      
-    );
+        menuScreen: MenuScreen(
+          zoomDrawerController: drawerController,
+        ),
+        mainScreen: BottomNavbarWidgetScreen(
+          zoomDrawerController: drawerController,
+        ));
   }
 }

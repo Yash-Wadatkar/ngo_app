@@ -7,4 +7,16 @@ class AppIcons {
     'assets/icons/ic_google_icon.svg',
     'assets/icons/ic_apple_icon.svg'
   ];
+
+  static const List<String> menuIconList = [
+    'assets/icons/home_menu_icon.svg',
+    'assets/icons/request_tracking_icon.svg',
+    'assets/icons/score_board_icon.svg',
+    'assets/icons/ngo_icon.svg',
+    'assets/icons/reward_icon.svg',
+    'assets/icons/setting_icon.svg',
+    'assets/icons/notification_icon.svg',
+    'assets/icons/log_out_icon.svg',
+    'assets/icons/refer_icon.svg',
+  ];
 }

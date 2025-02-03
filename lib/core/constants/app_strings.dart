@@ -31,4 +31,16 @@ class AppStrings {
   static const String otpVerificationScreenSubHeading =
       'Enter the verification code we just sent on your\nemail address.';
   static const String verify = 'Verify';
+
+  static const List<String> menuItemsNameList = [
+    'Home',
+    'Request Tracking',
+    'Score board',
+    'Ngo List',
+    'Rewards',
+    'Setting',
+    'She will be Safe',
+    'Logout',
+    'Refer and Earn'
+  ];
 }
