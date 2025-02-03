@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
@@ -8,7 +7,8 @@ import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_icons.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 import 'package:ngo_app/core/constants/app_strings.dart';
-import 'package:ngo_app/core/routes/app_router.gr.dart';
+
+import '../../../core/routes/app_router.gr.dart';
 
 class MenuScreen extends StatelessWidget {
   final ZoomDrawerController? zoomDrawerController;
@@ -17,7 +17,7 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.kPrimaryColor,
+      backgroundColor: AppColors.primaryColor,
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: SingleChildScrollView(
@@ -53,7 +53,7 @@ class MenuScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                         onTap: () {
-                          context.pushRoute(ScoreBoardRoute());
+                          context.pushRoute(BottomNavbarWidgetRoute());
                         },
                         title: Text(
                           AppStrings.menuItemsNameList[index],

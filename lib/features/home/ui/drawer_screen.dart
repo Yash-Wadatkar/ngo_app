@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:ngo_app/core/common_widgets/bottom_navbar_widget.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
-import 'package:ngo_app/core/routes/app_router.gr.dart';
 import 'package:ngo_app/features/home/ui/menu_screen.dart';
 
 @RoutePage()
@@ -33,7 +32,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
         menuBackgroundColor: AppColors.primaryColor,
         clipMainScreen: true,
         mainScreenTapClose: true,
-        shadowLayer1Color: AppColors.kPrimaryColor,
+        shadowLayer1Color: AppColors.primaryColor,
         menuScreen: MenuScreen(
           zoomDrawerController: drawerController,
         ),

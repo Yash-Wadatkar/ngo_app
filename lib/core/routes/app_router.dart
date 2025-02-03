@@ -14,7 +14,7 @@ class AppRouter extends RootStackRouter {
             AutoRoute(page: ProfileRoute.page),
           ],
         ),
-        AutoRoute(page: DrawerRoute.page, initial: true, children: [
+        AutoRoute(page: DrawerRoute.page, children: [
           AutoRoute(
             page: BottomNavbarWidgetRoute.page,
           ),

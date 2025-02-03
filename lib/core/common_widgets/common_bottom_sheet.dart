@@ -62,7 +62,7 @@ class CommonBottomSheet extends StatelessWidget {
                                   'Total Views (1200)',
                                   style: GoogleFonts.urbanist(
                                       fontSize: 12,
-                                      color: AppColors.kPrimaryColor),
+                                      color: AppColors.primaryColor),
                                 )
                               ],
                             ),
@@ -74,7 +74,7 @@ class CommonBottomSheet extends StatelessWidget {
                                   'Total Views (1200)',
                                   style: GoogleFonts.urbanist(
                                       fontSize: 12,
-                                      color: AppColors.kPrimaryColor),
+                                      color: AppColors.primaryColor),
                                 )
                               ],
                             ),
@@ -86,7 +86,7 @@ class CommonBottomSheet extends StatelessWidget {
                                   'Total Views (1200)',
                                   style: GoogleFonts.urbanist(
                                       fontSize: 12,
-                                      color: AppColors.kPrimaryColor),
+                                      color: AppColors.primaryColor),
                                 )
                               ],
                             )
@@ -130,7 +130,7 @@ class CommonBottomSheet extends StatelessWidget {
               backgroundColor: Colors.transparent,
               child: CircleAvatar(
                 radius: 30,
-                backgroundColor: AppColors.kPrimaryColor,
+                backgroundColor: AppColors.primaryColor,
                 child: IconButton(
                   onPressed: () {
                     context.maybePop();
@@ -196,10 +196,10 @@ class CommonBottomSheet extends StatelessWidget {
           Flexible(
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    side: BorderSide(color: AppColors.kPrimaryColor),
+                    side: BorderSide(color: AppColors.primaryColor),
                     elevation: 0,
                     backgroundColor: Color(0xffeffbff),
-                    foregroundColor: AppColors.kPrimaryColor,
+                    foregroundColor: AppColors.primaryColor,
                     minimumSize: Size(AppSizes.wSize30, AppSizes.hSize16)),
                 onPressed: () {},
                 child: Text(
@@ -220,10 +220,10 @@ class CommonBottomSheet extends StatelessWidget {
     return ListTile(
       trailing: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              side: BorderSide(color: AppColors.kPrimaryColor),
+              side: BorderSide(color: AppColors.primaryColor),
               elevation: 0,
               backgroundColor: Color(0xffeffbff),
-              foregroundColor: AppColors.kPrimaryColor,
+              foregroundColor: AppColors.primaryColor,
               minimumSize: Size(AppSizes.wSize30, AppSizes.hSize26)),
           onPressed: () {},
           child: Text(

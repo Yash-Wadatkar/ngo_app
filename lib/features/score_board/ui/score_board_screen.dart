@@ -62,7 +62,7 @@ class _ScoreBoardScreenState extends State<ScoreBoardScreen>
               tabTextColor: Color(0xff808080),
               textStyle: GoogleFonts.urbanist(
                   fontSize: 16, fontWeight: FontWeight.w600),
-              selectedTabTextColor: AppColors.kPrimaryColor,
+              selectedTabTextColor: AppColors.primaryColor,
               barDecoration: BoxDecoration(
                   border: Border.all(color: Color(0xffF3F4F6), width: 1.2),
                   shape: BoxShape.rectangle,
@@ -114,7 +114,7 @@ class _ScoreBoardScreenState extends State<ScoreBoardScreen>
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(30),
                             topRight: Radius.circular(30)),
-                        color: AppColors.kPrimaryColor,
+                        color: AppColors.primaryColor,
                       ),
                       height: 76,
                       width: 106,
@@ -132,7 +132,7 @@ class _ScoreBoardScreenState extends State<ScoreBoardScreen>
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30),
                           topRight: Radius.circular(30)),
-                      color: AppColors.kPrimaryColor,
+                      color: AppColors.primaryColor,
                     ),
                     height: 100,
                     width: 115,
@@ -150,7 +150,7 @@ class _ScoreBoardScreenState extends State<ScoreBoardScreen>
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(30),
                             topRight: Radius.circular(30)),
-                        color: AppColors.kPrimaryColor,
+                        color: AppColors.primaryColor,
                       ),
                       height: 61,
                       width: 106,

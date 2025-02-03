@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
               CustomButtonWidget(
                 buttonLabel: AppStrings.loginText,
                 ontap: () {
-                  context.pushRoute(RequestTrackingView());
+                  context.pushRoute(BottomNavbarWidgetRoute());
                 },
               ),
 
