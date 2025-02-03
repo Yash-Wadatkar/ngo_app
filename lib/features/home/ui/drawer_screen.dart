@@ -33,8 +33,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
         menuBackgroundColor: AppColors.primaryColor,
         clipMainScreen: true,
         mainScreenTapClose: true,
-        shadowLayer1Color: AppColors.primaryColor,
-        menuScreen: const MenuScreen(),
+        shadowLayer1Color: AppColors.kPrimaryColor,
+        menuScreen: MenuScreen(
+          zoomDrawerController: drawerController,
+        ),
         mainScreen: BottomNavbarWidgetScreen(
           zoomDrawerController: drawerController,
         ));

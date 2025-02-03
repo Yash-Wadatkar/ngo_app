@@ -14,6 +14,15 @@ class AppRouter extends RootStackRouter {
             AutoRoute(page: ProfileRoute.page),
           ],
         ),
+        AutoRoute(page: DrawerRoute.page, initial: true, children: [
+          AutoRoute(
+            page: BottomNavbarWidgetRoute.page,
+          ),
+          AutoRoute(page: HomeRoute.page),
+          AutoRoute(page: SearchRoute.page),
+          AutoRoute(page: NotificationRoute.page),
+          AutoRoute(page: ProfileRoute.page),
+        ]),
 
         /// Routes for Auth Screens
         AutoRoute(
@@ -33,5 +42,8 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: AccountInfoRoute.page),
         AutoRoute(page: RequestTrackingView.page),
         AutoRoute(page: RequestTrackingDetailsView.page),
+
+        /// route of scoreboard screen
+        AutoRoute(page: ScoreBoardRoute.page),
       ];
 }

@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ngo_app/core/common_widgets/common_bottom_sheet.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 
 class PostCardWidget extends StatelessWidget {
-  const PostCardWidget({super.key});
+  const PostCardWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class PostCardWidget extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(25)),
             ),
-           height: 350.h,
+            height: 350.h,
             width: double.infinity,
             child: Image.asset(
               'assets/images/profile_pic.png',
@@ -118,20 +121,65 @@ class PostCardWidget extends StatelessWidget {
                       children: [
                         AppSizes.height10,
                         _postIconButtons(
+                            ontap: () {
+                              showModalBottomSheet(
+                                scrollControlDisabledMaxHeightRatio: 2,
+                                enableDrag: true,
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) {
+                                  return CommonBottomSheet(id: 1);
+                                },
+                              );
+                            },
                             context: context,
                             iconPath: 'assets/icons/ic_heart_icon.svg',
                             isCountRequired: true),
                         AppSizes.height10,
                         _postIconButtons(
+                            ontap: () {
+                              showModalBottomSheet(
+                                scrollControlDisabledMaxHeightRatio: 2,
+                                enableDrag: true,
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) {
+                                  return CommonBottomSheet(id: 2);
+                                },
+                              );
+                            },
                             context: context,
                             iconPath: 'assets/icons/ic_comments_icon.svg',
                             isCountRequired: true),
                         AppSizes.height10,
                         _postIconButtons(
+                            ontap: () {
+                              showModalBottomSheet(
+                                scrollControlDisabledMaxHeightRatio: 3,
+                                enableDrag: true,
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) {
+                                  return CommonBottomSheet(id: 3);
+                                },
+                              );
+                            },
+                            isCountRequired: true,
                             context: context,
                             iconPath: 'assets/icons/ic_share_icon.svg'),
                         AppSizes.height10,
                         _postIconButtons(
+                            ontap: () {
+                              showModalBottomSheet(
+                                scrollControlDisabledMaxHeightRatio: 2,
+                                enableDrag: true,
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) {
+                                  return CommonBottomSheet(id: 4);
+                                },
+                              );
+                            },
                             context: context,
                             iconPath: 'assets/icons/ic_menu_icon.svg')
                       ],
@@ -146,6 +194,7 @@ class PostCardWidget extends StatelessWidget {
     );
   }
 
+  /// widget for postcard icons button
   Widget _postIconButtons(
       {required BuildContext context,
       required String iconPath,

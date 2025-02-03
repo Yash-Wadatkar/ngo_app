@@ -43,4 +43,16 @@ class AppStrings {
   static const String search = "Search";
   static const String confirmationDeleteMessage =
       "Are you sure you want to delete this message?";
+
+  static const List<String> menuItemsNameList = [
+    'Home',
+    'Request Tracking',
+    'Score board',
+    'Ngo List',
+    'Rewards',
+    'Setting',
+    'She will be Safe',
+    'Logout',
+    'Refer and Earn'
+  ];
 }
