@@ -36,9 +36,9 @@ class LoginScreen extends StatelessWidget {
           child: FormBuilder(
             key: formKey,
             child: Column(
+              spacing: AppSizes.hSize10,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppSizes.height2,
                 Text(
                   AppStrings.loginScreenHeading,
                   style: GoogleFonts.urbanist(
@@ -47,7 +47,6 @@ class LoginScreen extends StatelessWidget {
                     color: AppColors.blackColor,
                   ),
                 ),
-                AppSizes.height10,
 
                 CommonInputFieldWidget(
                   name: AppStrings.enterYourEmailText,
@@ -60,7 +59,6 @@ class LoginScreen extends StatelessWidget {
                     return null;
                   },
                 ),
-                AppSizes.height10,
 
                 /// Password Field
                 CommonInputFieldWidget(
@@ -74,7 +72,6 @@ class LoginScreen extends StatelessWidget {
                     return null;
                   },
                 ),
-                AppSizes.height10,
 
                 /// Forgot Password
                 Align(
@@ -92,7 +89,6 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                AppSizes.height10,
 
                 /// Login Button
                 CustomButtonWidget(
@@ -114,9 +110,7 @@ class LoginScreen extends StatelessWidget {
                   },
                 ),
 
-                AppSizes.height10,
                 _orLoginWithTextWidget(),
-                AppSizes.height10,
 
                 /// Social Media Login
                 Row(
@@ -131,7 +125,6 @@ class LoginScreen extends StatelessWidget {
                   ).toList(),
                 ),
 
-                AppSizes.height16,
                 _dontHaveAccountRegisterWidget(
                   onTap: () {
                     context.pushRoute(
@@ -191,14 +184,14 @@ class LoginScreen extends StatelessWidget {
             TextSpan(
                 text: AppStrings.dontHaveAnAccountText,
                 style: GoogleFonts.urbanist(
-                    fontSize: AppSizes.fSize16,
+                    fontSize: AppSizes.fSize14,
                     fontWeight: AppSizes.fontWeight500,
                     color: AppColors.blackColor)),
             TextSpan(
               recognizer: TapGestureRecognizer()..onTap = onTap,
               text: AppStrings.registerNowText,
               style: GoogleFonts.urbanist(
-                  fontSize: AppSizes.fSize16,
+                  fontSize: AppSizes.fSize14,
                   fontWeight: AppSizes.fontWeight700,
                   color: AppColors.secondaryColor),
             ),

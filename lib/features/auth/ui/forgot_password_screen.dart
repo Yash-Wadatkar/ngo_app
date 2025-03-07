@@ -26,17 +26,14 @@ class ForgotPasswordScreen extends StatelessWidget {
       body: Padding(
         padding: AppSizes.horizontalPadding6,
         child: Column(
+          spacing: AppSizes.hSize12,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(flex: 28, child: SizedBox()),
-
             /// forgot password screen header
             Text(AppStrings.forgotPasswordHeading,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.justify,
                 style: Theme.of(context).textTheme.headlineLarge),
-
-            Expanded(flex: 10, child: SizedBox()),
 
             /// forgot password screen subheading
             Text(
@@ -45,15 +42,11 @@ class ForgotPasswordScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
 
-            Expanded(flex: 32, child: SizedBox()),
-
             /// custom input field to enter email
             CommonInputFieldWidget(
               hintText: AppStrings.enterYourEmailText,
               name: AppStrings.enterYourEmailText,
             ),
-
-            Expanded(flex: 18, child: SizedBox()),
 
             /// custom button widget to move to otp screen
             CustomButtonWidget(
@@ -63,8 +56,6 @@ class ForgotPasswordScreen extends StatelessWidget {
               },
             ),
 
-            Expanded(flex: 381, child: SizedBox()),
-
             /// remeber password text button widget
             _rememberPasswordLoginWidget(
               context: context,
@@ -72,8 +63,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                 context.replaceRoute(LoginRoute());
               },
             ),
-
-            Expanded(flex: 79, child: SizedBox()),
           ],
         ),
       ),

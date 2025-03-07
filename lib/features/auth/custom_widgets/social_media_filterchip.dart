@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:ngo_app/core/common_widgets/custom_image.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
-import 'package:ngo_app/core/constants/app_sizes.dart';
 
 class SocialMediaFilterChip extends StatelessWidget {
   final String assetPath;
@@ -17,10 +16,9 @@ class SocialMediaFilterChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilterChip(
       checkmarkColor: AppColors.whiteColor,
-      label: SizedBox(
-        height: AppSizes.hSize4, // Set desired height
-        width: AppSizes.wSize16, // Set desired width
-        child: SvgPicture.asset(assetPath),
+      label: CustomImage(
+        imagePath: assetPath,
+        isSvg: true,
       ),
       onSelected: (value) => onSelected(),
     );

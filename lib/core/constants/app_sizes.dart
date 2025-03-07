@@ -43,6 +43,7 @@ class AppSizes {
   static double hSize26 = 26.h;
   static double hSize30 = 30.h;
   static double hSize40 = 40.h;
+  static double hSize50 = 50.h;
 
   /// Widths as percentages of screen width
   static double wSize2 = 2.w;

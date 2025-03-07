@@ -29,6 +29,7 @@ class RegisterScreenWidget extends StatelessWidget {
         child: Padding(
           padding: AppSizes.horizontalPadding6,
           child: Column(
+            spacing: AppSizes.hSize10,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppSizes.height2,
@@ -70,18 +71,13 @@ class RegisterScreenWidget extends StatelessWidget {
                 name: AppStrings.selectGender,
               ),
 
-              AppSizes.height2,
-
               /// custom register button
               CustomButtonWidget(
                 buttonLabel: 'Register',
                 ontap: () {},
               ),
 
-              AppSizes.height4,
               _orLoginWithTextWidget(context),
-
-              AppSizes.height4,
 
               /// filter chip widget with social media icons
               Row(

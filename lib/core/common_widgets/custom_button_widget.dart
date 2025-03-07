@@ -12,6 +12,7 @@ class CustomButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
+      height: AppSizes.hSize50,
       child: ElevatedButton(
           style: ButtonStyle(
               shape: WidgetStatePropertyAll(RoundedRectangleBorder(
@@ -19,12 +20,12 @@ class CustomButtonWidget extends StatelessWidget {
               backgroundColor: WidgetStatePropertyAll(AppColors.primaryColor)),
           onPressed: ontap,
           child: Padding(
-            padding: AppSizes.padding16,
+            padding: AppSizes.padding12,
             child: Text(
               overflow: TextOverflow.ellipsis,
               buttonLabel,
               style: GoogleFonts.urbanist(
-                  fontSize: AppSizes.fSize16, color: AppColors.whiteColor),
+                  fontSize: AppSizes.fSize14, color: AppColors.whiteColor),
             ),
           )),
     );

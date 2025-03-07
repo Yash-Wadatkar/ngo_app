@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/routes/app_router.dart';
-import 'package:ngo_app/core/utils/theme/theme.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 
 void main() {
@@ -41,15 +40,23 @@ class MyApp extends StatelessWidget {
         return MaterialApp.router(
           routerConfig: _appRouter.config(),
 
-          /// apply theme to the system
-          /// Automatically pick system's theme (light or dark)
-
           /// for light theme of application
-          theme: TAppTheme.lightTheme,
+          theme: ThemeData(
+            primaryColor: AppColors.primaryColor,
+            unselectedWidgetColor: AppColors.secondaryColor,
+            pageTransitionsTheme: const PageTransitionsTheme(
+              builders: {
+                TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+                TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+                TargetPlatform.windows: CupertinoPageTransitionsBuilder()
+              },
+            ),
+            fontFamily: "Urbanist",
+            scaffoldBackgroundColor: AppColors.whiteColor,
+          ),
           color: AppColors.whiteColor,
 
           /// for dark theme of the application
-
           /// Optional: remove the debug banner
           debugShowCheckedModeBanner: false,
         );
