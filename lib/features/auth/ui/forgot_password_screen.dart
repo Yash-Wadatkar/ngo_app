@@ -51,7 +51,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             /// custom button widget to move to otp screen
             CustomButtonWidget(
               buttonLabel: AppStrings.sendCodeText,
-              ontap: () {
+              onTap: () {
                 context.pushRoute(OtpVerificationRoute());
               },
             ),

@@ -74,7 +74,7 @@ class RegisterScreenWidget extends StatelessWidget {
               /// custom register button
               CustomButtonWidget(
                 buttonLabel: 'Register',
-                ontap: () {},
+                onTap: () {},
               ),
 
               _orLoginWithTextWidget(context),

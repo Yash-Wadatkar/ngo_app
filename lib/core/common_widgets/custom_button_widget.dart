@@ -5,8 +5,8 @@ import 'package:ngo_app/core/constants/app_sizes.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   final String buttonLabel;
-  final void Function()? ontap;
-  const CustomButtonWidget({super.key, required this.buttonLabel, this.ontap});
+  final void Function()? onTap;
+  const CustomButtonWidget({super.key, required this.buttonLabel, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class CustomButtonWidget extends StatelessWidget {
               shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppSizes.radius10))),
               backgroundColor: WidgetStatePropertyAll(AppColors.primaryColor)),
-          onPressed: ontap,
+          onPressed: onTap,
           child: Padding(
             padding: AppSizes.padding12,
             child: Text(
