@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:ngo_app/core/common_widgets/common_request_image_card.dart';
 import 'package:ngo_app/core/routes/app_router.gr.dart';
-import 'package:ngo_app/features/auth/custom_widgets/custom_input_field_widget.dart';
 
 import '../../../core/common_widgets/common_app_bar.dart';
 import '../../../core/common_widgets/common_filter_card.dart';
 import '../../../core/common_widgets/common_toggle.dart';
+import '../../../core/common_widgets/custom_input_field_widget.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_sizes.dart';
 import '../../../core/constants/app_strings.dart';
@@ -50,8 +50,9 @@ class _RequestTrackingViewState extends State<RequestTrackingView> {
   }
 
   Widget _buildSearchBar() {
-    return CustomInputFieldWidget(
+    return CommonInputFieldWidget(
       hintText: AppStrings.search,
+      name: AppStrings.search,
     );
   }
 

@@ -8,7 +8,8 @@ import 'package:ngo_app/core/constants/app_sizes.dart';
 import 'package:ngo_app/core/constants/app_strings.dart';
 import 'package:ngo_app/core/routes/app_router.gr.dart';
 import 'package:ngo_app/features/auth/custom_widgets/custom_app_bar_widget.dart';
-import 'package:ngo_app/features/auth/custom_widgets/custom_input_field_widget.dart';
+
+import '../../../core/common_widgets/custom_input_field_widget.dart';
 
 @RoutePage()
 class ForgotPasswordScreen extends StatelessWidget {
@@ -47,7 +48,10 @@ class ForgotPasswordScreen extends StatelessWidget {
             Expanded(flex: 32, child: SizedBox()),
 
             /// custom input field to enter email
-            CustomInputFieldWidget(hintText: AppStrings.enterYourEmailText),
+            CommonInputFieldWidget(
+              hintText: AppStrings.enterYourEmailText,
+              name: AppStrings.enterYourEmailText,
+            ),
 
             Expanded(flex: 18, child: SizedBox()),
 

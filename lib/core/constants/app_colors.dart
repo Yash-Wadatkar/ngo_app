@@ -22,4 +22,6 @@ class AppColors {
   static Color iconColor = Color(0xff000E08).withOpacity(0.5);
   static Color messageSelectedBoxColor = Color(0xffEDEDED);
   static Color toggleSelectedColor = Color(0xffF3FCFF);
+  static const Color successSnackBarColor = Color(0xff6E9A5D);
+  static const Color errorSnackBarColor = Color(0xffE06E67);
 }

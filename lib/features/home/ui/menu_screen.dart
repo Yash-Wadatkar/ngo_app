@@ -53,7 +53,7 @@ class MenuScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                         onTap: () {
-                          context.pushRoute(BottomNavbarWidgetRoute());
+                          context.pushRoute(RequestTrackingView());
                         },
                         title: Text(
                           AppStrings.menuItemsNameList[index],

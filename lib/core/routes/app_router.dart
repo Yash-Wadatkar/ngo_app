@@ -5,15 +5,6 @@ import 'package:ngo_app/core/routes/app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(
-          page: BottomNavbarWidgetRoute.page,
-          children: [
-            AutoRoute(page: HomeRoute.page),
-            AutoRoute(page: SearchRoute.page),
-            AutoRoute(page: NotificationRoute.page),
-            AutoRoute(page: ProfileRoute.page),
-          ],
-        ),
         AutoRoute(page: DrawerRoute.page, children: [
           AutoRoute(
             page: BottomNavbarWidgetRoute.page,

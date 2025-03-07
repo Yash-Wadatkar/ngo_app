@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
+import 'package:ngo_app/core/routes/app_router.gr.dart';
 
 class CustomHomeScreenAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -64,18 +66,23 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
                               fontWeight: FontWeight.w700),
                         ),
                         Expanded(flex: 108, child: SizedBox()),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Color(0xff0d5069)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(14.0),
-                                child: Image.asset(
-                                    'assets/icons/ic_message_icon.png'),
+                        GestureDetector(
+                          onTap: () {
+                            context.pushRoute(ChatListingRoute());
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color: Color(0xff0d5069)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(14.0),
+                                  child: Image.asset(
+                                      'assets/icons/ic_message_icon.png'),
+                                ),
                               ),
                             ),
                           ),

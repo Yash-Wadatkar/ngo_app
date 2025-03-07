@@ -43,6 +43,11 @@ class AppStrings {
   static const String search = "Search";
   static const String confirmationDeleteMessage =
       "Are you sure you want to delete this message?";
+  static const String encryptedKey =
+      "DF0C22A40B6D827FAD1A22E122A0138F50D0B9BDE2A3EDDDC4583F098FD2F8DE";
+  static const String encryptedIV = "ab9c7b62b8b1b5c330f4d1089a9e6804";
+
+  static const String accessToken = "accessToken";
 
   static const List<String> menuItemsNameList = [
     'Home',

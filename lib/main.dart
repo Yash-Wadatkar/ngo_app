@@ -43,14 +43,12 @@ class MyApp extends StatelessWidget {
 
           /// apply theme to the system
           /// Automatically pick system's theme (light or dark)
-          themeMode: ThemeMode.system,
 
           /// for light theme of application
           theme: TAppTheme.lightTheme,
           color: AppColors.whiteColor,
 
           /// for dark theme of the application
-          darkTheme: TAppTheme.darkTheme,
 
           /// Optional: remove the debug banner
           debugShowCheckedModeBanner: false,

@@ -7,8 +7,9 @@ import 'package:ngo_app/core/constants/app_icons.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 import 'package:ngo_app/core/constants/app_strings.dart';
 import 'package:ngo_app/features/auth/custom_widgets/custom_app_bar_widget.dart';
-import 'package:ngo_app/features/auth/custom_widgets/custom_input_field_widget.dart';
 import 'package:ngo_app/features/auth/custom_widgets/social_media_filterchip.dart';
+
+import '../../../core/common_widgets/custom_input_field_widget.dart';
 
 @RoutePage()
 class RegisterScreenWidget extends StatelessWidget {
@@ -40,28 +41,33 @@ class RegisterScreenWidget extends StatelessWidget {
               AppSizes.height6,
 
               /// username input field
-              CustomInputFieldWidget(
+              CommonInputFieldWidget(
                 hintText: AppStrings.userName,
+                name: AppStrings.userName,
               ),
 
               /// email input field
-              CustomInputFieldWidget(
+              CommonInputFieldWidget(
                 hintText: AppStrings.email,
+                name: AppStrings.email,
               ),
 
               /// password input field
-              CustomInputFieldWidget(
+              CommonInputFieldWidget(
                 hintText: AppStrings.password,
+                name: AppStrings.password,
               ),
 
               /// confirm password input field
-              CustomInputFieldWidget(
+              CommonInputFieldWidget(
                 hintText: AppStrings.confirmPassword,
+                name: AppStrings.confirmPassword,
               ),
 
               /// select gender
-              CustomInputFieldWidget(
+              CommonInputFieldWidget(
                 hintText: AppStrings.selectGender,
+                name: AppStrings.selectGender,
               ),
 
               AppSizes.height2,
