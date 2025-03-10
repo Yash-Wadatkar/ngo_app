@@ -49,6 +49,8 @@ class AppStrings {
 
   static const String accessToken = "accessToken";
 
+  static const String appLogo = "assets/images/karma_logo.svg";
+
   static const List<String> menuItemsNameList = [
     'Home',
     'Request Tracking',

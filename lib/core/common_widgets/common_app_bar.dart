@@ -16,7 +16,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      primary: false,
+      primary: false, backgroundColor: AppColors.whiteColor,
       centerTitle: true, // Ensures the title is centered
       title: CustomTextWidget(
         text: appBarTitle,

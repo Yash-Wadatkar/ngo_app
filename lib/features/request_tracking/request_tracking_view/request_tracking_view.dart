@@ -27,7 +27,7 @@ class _RequestTrackingViewState extends State<RequestTrackingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.whiteColor,
       appBar: CommonAppBar(appBarTitle: "Request Tracking"),
       body: _buildBody(),
     );

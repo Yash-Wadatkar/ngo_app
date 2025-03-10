@@ -31,36 +31,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: false,
-      builder: (context, Widget? child) {
-        /// Use builder method for Sizer
-        return MaterialApp.router(
-          routerConfig: _appRouter.config(),
+    return SafeArea(
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: false,
+        builder: (context, Widget? child) {
+          /// Use builder method for Sizer
+          return MaterialApp.router(
+            routerConfig: _appRouter.config(),
 
-          /// for light theme of application
-          theme: ThemeData(
-            primaryColor: AppColors.primaryColor,
-            unselectedWidgetColor: AppColors.secondaryColor,
-            pageTransitionsTheme: const PageTransitionsTheme(
-              builders: {
-                TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-                TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-                TargetPlatform.windows: CupertinoPageTransitionsBuilder()
-              },
+            /// for light theme of application
+            theme: ThemeData(
+              appBarTheme: AppBarTheme(
+                color: AppColors.whiteColor,
+              ),
+              primaryColor: AppColors.primaryColor,
+              unselectedWidgetColor: AppColors.secondaryColor,
+              pageTransitionsTheme: const PageTransitionsTheme(
+                builders: {
+                  TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+                  TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+                  TargetPlatform.windows: CupertinoPageTransitionsBuilder()
+                },
+              ),
+              fontFamily: "Urbanist",
+              scaffoldBackgroundColor: AppColors.whiteColor,
             ),
-            fontFamily: "Urbanist",
-            scaffoldBackgroundColor: AppColors.whiteColor,
-          ),
-          color: AppColors.whiteColor,
+            color: AppColors.whiteColor,
 
-          /// for dark theme of the application
-          /// Optional: remove the debug banner
-          debugShowCheckedModeBanner: false,
-        );
-      },
+            /// for dark theme of the application
+            /// Optional: remove the debug banner
+            debugShowCheckedModeBanner: false,
+          );
+        },
+      ),
     );
   }
 }

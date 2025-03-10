@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ngo_app/core/common_widgets/custom_image.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
 import 'package:ngo_app/core/routes/app_router.gr.dart';
@@ -117,13 +117,13 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
                                         Text(
                                           'Hello!',
                                           style: GoogleFonts.urbanist(
-                                              fontSize: 18,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.w400,
                                               color: Color(0xff80a3b0)),
                                         ),
                                         Text('Sahail Kadam',
                                             style: GoogleFonts.urbanist(
-                                              fontSize: 20,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                               color: AppColors.whiteColor,
                                             ))
@@ -142,13 +142,13 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
                                 Text(
                                   'Current Score',
                                   style: GoogleFonts.urbanist(
-                                      fontSize: 18,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w400,
                                       color: Color(0xff80a3b0)),
                                 ),
                                 Text('29',
                                     style: GoogleFonts.urbanist(
-                                      fontSize: 20,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                       color: AppColors.whiteColor,
                                     ))
@@ -165,20 +165,16 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
                       padding: EdgeInsets.only(
                           top: AppSizes.hSize8, bottom: AppSizes.hSize10),
                       child: Row(
+                        spacing: 10,
                         children: [
                           /// media widget to upload photos
                           Expanded(
-                              flex: 7,
                               child: _upLoadMediaWidget(
                                   context: context,
                                   imagePath: 'assets/icons/ic_gallery_icon.svg',
                                   mediaText: 'Upload Photo')),
 
-                          Expanded(flex: 1, child: SizedBox()),
-
-                          /// media widget to upload videos
                           Expanded(
-                              flex: 7,
                               child: _upLoadMediaWidget(
                                   context: context,
                                   imagePath: 'assets/icons/ic_gallery_icon.svg',
@@ -221,9 +217,9 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: SizedBox(),
           ),
-          SvgPicture.asset(
-            imagePath,
-            height: 25,
+          CustomImage(
+            isSvg: true,
+            imagePath: imagePath,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -234,7 +230,7 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
               mediaText,
               style: GoogleFonts.urbanist(
                   color: AppColors.whiteColor,
-                  fontSize: 16,
+                  fontSize: 12,
                   fontWeight: AppSizes.fontWeight400),
             ),
           ),
@@ -249,5 +245,5 @@ class CustomHomeScreenAppBarWidget extends StatelessWidget
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(250.h);
+  Size get preferredSize => Size.fromHeight(250);
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ngo_app/core/common_widgets/custom_image.dart';
 import 'package:ngo_app/core/constants/app_colors.dart';
 import 'package:ngo_app/core/constants/app_images.dart';
 import 'package:ngo_app/core/constants/app_sizes.dart';
@@ -24,11 +24,12 @@ class CustomAppBarWidget extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
         automaticallyImplyLeading: false,
+        backgroundColor: AppColors.whiteColor,
         centerTitle: true,
         title: Padding(
           padding: AppSizes.horizontalPadding2,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               automaticallyImplyLeading == true
                   ? GestureDetector(
@@ -41,8 +42,8 @@ class CustomAppBarWidget extends StatelessWidget
                 fontWeight: FontWeight.bold,
               ),
               logoRequired == true
-                  ? SvgPicture.asset(
-                      AppImages.appLogoImage,
+                  ? CustomImage(
+                      imagePath: AppImages.appLogo,
                     )
                   : SizedBox.shrink()
             ],

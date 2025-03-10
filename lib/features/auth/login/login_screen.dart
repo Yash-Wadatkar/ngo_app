@@ -14,7 +14,6 @@ import 'package:ngo_app/features/auth/custom_widgets/custom_app_bar_widget.dart'
 import 'package:ngo_app/features/auth/custom_widgets/social_media_filterchip.dart';
 import 'package:ngo_app/features/auth/login/login_controller.dart';
 
-import '../../../core/common_widgets/common_response_widget.dart';
 import '../../../core/common_widgets/custom_input_field_widget.dart';
 
 @RoutePage()
@@ -29,7 +28,8 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarWidget(automaticallyImplyLeading: false),
+      appBar: CustomAppBarWidget(
+          automaticallyImplyLeading: false, logoRequired: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: AppSizes.horizontalPadding6,
@@ -38,8 +38,10 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               spacing: AppSizes.hSize10,
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AppSizes.height2,
+                AppSizes.height20,
+
                 Text(
                   AppStrings.loginScreenHeading,
                   style: GoogleFonts.urbanist(
@@ -96,19 +98,20 @@ class LoginScreen extends StatelessWidget {
                 CustomButtonWidget(
                   buttonLabel: AppStrings.loginText,
                   onTap: () {
-                    if (formKey.currentState != null &&
-                        formKey.currentState!.validate()) {
-                      final formData = formKey.currentState!.value;
-                      _controller.login(
-                        email: formData[AppStrings.enterYourPasswordText],
-                        password: formData[AppStrings.enterYourPasswordText],
-                      );
-                    } else {
-                      CommonSnackBarWithResponse(
-                        title: "Please fix the errors in the form",
-                        isSuccessDialog: false,
-                      );
-                    }
+                    // if (formKey.currentState != null &&
+                    //     formKey.currentState!.validate()) {
+                    //   final formData = formKey.currentState!.value;
+                    //   _controller.login(
+                    //     email: formData[AppStrings.enterYourPasswordText],
+                    //     password: formData[AppStrings.enterYourPasswordText],
+                    //   );
+                    // } else {
+                    //   CommonSnackBarWithResponse(
+                    //     title: "Please fix the errors in the form",
+                    //     isSuccessDialog: false,
+                    //   );
+                    // }
+                    context.pushRoute(BottomNavbarWidgetRoute());
                   },
                 ),
 
